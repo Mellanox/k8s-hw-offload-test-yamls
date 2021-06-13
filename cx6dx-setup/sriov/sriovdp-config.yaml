@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sriovdp-config
+  namespace: kube-system
+data:
+  config.json: |
+    {
+        "resourceList": [{
+                "resourceName": "mlnx_cx6dx",
+                "resourcePrefix": "mellanox.com",
+                "selectors": {
+                    "pfNames": ["enp3s0f0"]
+                }
+            }
+        ]
+    }

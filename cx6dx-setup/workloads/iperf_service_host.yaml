@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iperf3-host-network-svc
+  labels:
+    run: iperf
+spec:
+  type: NodePort
+  ports:
+  - port: 5201
+    protocol: TCP
+  selector:
+    app: iperf3-host-network-service
